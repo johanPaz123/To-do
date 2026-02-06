@@ -33,10 +33,13 @@ $(function () {
       todoList.append(`
           <li class="todo-item">
               <h3 class="task-text">${t.name}</h3>
+              <p>Prioridad: ${t.priority} - Categoría: ${t.category}</p>
               <button class="btn-edit">Editar</button>
               <button class="btn-complete">Completar</button>
           </li>
       `);
     });
+
+    this.reset();
   });
 });
