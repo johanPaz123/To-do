@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Master Task Pro - Tu Gestor de Tareas</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+  </head>
+  <body class="light-mode">
+    <div class="container">
+      <header>
+        <h1>Mis Tareas</h1>
+        <button id="theme-toggle" class="btn-icon" title="Cambiar tema">
+          <i class="fas fa-moon"></i>
+        </button>
+      </header>
+
+      <section class="input-section">
+        <form id="todo-form">
+          <div class="input-group">
+            <input
+              type="text"
+              id="todo-input"
+              name="textTask"
+              placeholder="¿Qué hay que hacer hoy?"
+            />
+            <select id="priority-select" name="priority">
+              <option value="low">Baja</option>
+              <option value="medium" selected>Media</option>
+              <option value="high">Alta</option>
+            </select>
+          </div>
+
+          <div class="input-details">
+            <input type="date" id="due-date" name="deadline" />
+            <select id="category-select" name="category">
+              <option value="personal">🏠 Personal</option>
+              <option value="work">💼 Trabajo</option>
+              <option value="study">📚 Estudios</option>
+            </select>
+            <button type="submit" id="add-btn">
+              Añadir <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="controls">
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" id="search-input" placeholder="Buscar tarea..." />
+        </div>
+
+        <div class="filter-group">
+          <button class="filter-btn active" data-filter="all">Todas</button>
+          <button class="filter-btn" data-filter="active">
+            Pendientes
+          </button>
+          <button class="filter-btn" data-filter="completed">Hechas</button>
+        </div>
+      </section>
+
+      <ul id="todo-list" class="todo-list"></ul>
+
+      <footer class="stats-footer">
+        <span id="items-left">0 tareas pendientes</span>
+        <div class="actions">
+          <button id="clear-completed">Limpiar completadas</button>
+          <button id="export-json" title="Exportar a JSON">
+            <i class="fas fa-file-export"></i>
+          </button>
+        </div>
+      </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
